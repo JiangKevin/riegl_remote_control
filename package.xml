@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>riegl_remote_control</name>
+  <version>0.0.0</version>
+  <description>Provides remote control for the Riegl V-Line laser scanners with Innik Heros remote</description>
+
+  <maintainer email="gjulian@uni-osnabrueck.de">Julian Gaal</maintainer>
+  <license>TODO</license>
+
+  <author email="gjulian@uni-osnabrueck.de">Julian Gaal</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>actionlib</build_depend>
+  <build_depend>riegl_vline_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+
+  <run_depend>actionlib</run_depend>
+  <run_depend>riegl_vline_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+
+  <export>
+  </export>
+</package>

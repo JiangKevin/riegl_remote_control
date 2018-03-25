@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="source" default="/dev/input/js1"/>
+
+  <!--node pkg="ps3joy" type="ps3joy.py" name="ps3joy" output="screen" launch-prefix="sudo"/>
+  <node pkg="joy" type="joy_node" name="joy_node">
+        <param name="autorepeat_rate" value="10"/>
+        <param name="dev" value="$(arg source)"/>
+  </node>
+  -->
+  <arg name="location" default ="AXES" />
+  <arg name="index"  default ="0" />
+  <arg name="value"  default ="1.0" />
+  <node name="riegl_remote_control_node" pkg="riegl_remote_control" type="riegl_remote_control_node" output="screen">
+    <remap from="riegl_scan" to="riegl_driver/riegl_scan"/>
+    <param name="remote_type" value="ps3"/>
+    <param name="location" value="$(arg location)" />
+    <param name="index" value ="$(arg index)" />
+    <param name="value" value ="$(arg value)" />
+  </node>
+</launch>

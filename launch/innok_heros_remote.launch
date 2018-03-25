@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="location" default ="AXES" />
+  <arg name="index"  default ="3" />
+  <arg name="value"  default ="-0.6299212574958801" />
+  <node name="riegl_remote_control_node" pkg="riegl_remote_control" type="riegl_remote_control_node" output="screen">
+    <remap from="riegl_scan" to="riegl_driver/riegl_scan"/>
+    <remap from="/remote_joy"to="joy"/>
+    <param name="remote_type" value="heros"/>
+    <param name="location" value="$(arg location)" />
+    <param name="index" value ="$(arg index)" />
+    <param name="value" value ="$(arg value)" />
+  </node>
+</launch>

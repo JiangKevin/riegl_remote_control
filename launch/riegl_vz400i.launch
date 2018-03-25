@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="near_range" default ="false" />
+  <arg name="theta_min"  default ="0.0" />
+  <arg name="theta_max"  default ="180.0" />
+  <arg name="theta_incr" default ="0.3" />
+  <arg name="phi_min"    default ="0.0" />
+  <arg name="phi_max"    default ="360.0" />
+  <arg name="phi_incr"   default ="0.3" />
+  <node name="riegl_vline_teleop_node" pkg="riegl_vline_teleop" type="riegl_vline_teleop_node" output="screen">
+    <remap from="riegl_scan" to="riegl_driver/riegl_scan"/>
+    <param name="program" value="1" />
+    <param name="near_range" value ="$(arg near_range)" />
+    <param name="theta_min"  value ="$(arg theta_min)" />
+    <param name="theta_max"  value ="$(arg theta_max)" />
+    <param name="theta_incr" value ="$(arg theta_incr)" />
+    <param name="phi_min"    value ="$(arg phi_min)" />
+    <param name="phi_max"    value ="$(arg phi_max)" />
+    <param name="phi_incr"   value ="$(arg phi_incr)" />
+  </node>
+</launch>
